@@ -1,3 +1,3 @@
 # ElixirBlink
 
-** TODO: Add description **
+Using Elixir to blink a light on a pcDuino
