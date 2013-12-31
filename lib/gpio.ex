@@ -7,6 +7,10 @@ defmodule GPIO do
     File.write("#{@mode_path}#{pin}", "1")
   end
 
+  def read_mode(pin) do
+    File.write("#{@mode_path}#{pin}", "0")
+  end
+
   def on(pin) do
     File.write("#{@pin_path}#{pin}", "1") 
   end
