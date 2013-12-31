@@ -18,4 +18,9 @@ defmodule GPIO do
   def off(pin) do
     File.write("#{@pin_path}#{pin}", "0")
   end
+
+  def read(pin) do 
+    File.read("#{@pin_path}#{pin}")
+  end
+
 end
