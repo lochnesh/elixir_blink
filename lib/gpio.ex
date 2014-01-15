@@ -11,7 +11,7 @@ defmodule GPIO do
     File.write("#{@mode_path}#{pin}", "0")
   end
 
-  def pull_up(pin) do
+  def pull_up_mode(pin) do
     File.write("#{@mode_path}#{pin}", "8")
   end
 
