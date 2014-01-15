@@ -24,7 +24,11 @@ defmodule GPIO do
   end
 
   def read(pin) do 
-    File.read("#{@pin_path}#{pin}")
+    case File.read("#{@pin_path}#{pin}") do
+      {:ok, "0\n"} -> :off
+      {:ok, "1\n"} -> :on
+      _ -> :error
+    end 
   end
 
 end

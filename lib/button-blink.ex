@@ -7,9 +7,8 @@ defmodule ButtonBlink do
     Enum.each(iterator, fn(value) -> process(value) end)
   end
 
-  def process({:ok, "0\n"}), do: GPIO.off("13")
-  def process({:ok, "1\n"}), do: GPIO.on("13")
-  def process({:ok, value}), do: IO.puts "Something unexpected #{value}" 
-  def process(_), do: IO.puts "Something went wrong"
+  def process(:off), do: GPIO.off("13")
+  def process(:on), do: GPIO.on("13")
+  def process(:error), do: IO.puts "Something went wrong"
 
 end

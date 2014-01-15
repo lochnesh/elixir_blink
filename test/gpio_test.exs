@@ -32,9 +32,19 @@ defmodule ElixirBlinkTest do
     assert called File.write("/sys/devices/virtual/misc/gpio/pin/gpio13", "0")
   end
 
-  test_with_mock "GPIO.read reads from correct file", File, 
-  [read: fn(_file) -> ("0\n") end] do 
-    assert GPIO.read("13") === "0\n"
+  test_with_mock "GPIO.read returns :off when 0 is read", File, 
+  [read: fn(_file) -> ({:ok, "0\n"}) end] do 
+    assert :off === GPIO.read("13") 
+  end
+
+  test_with_mock "GPIO.read returns :on when 1 is read", File, 
+  [read: fn(_file) -> ({:ok, "1\n"}) end] do 
+    assert :on === GPIO.read("13") 
+  end
+
+  test_with_mock "GPIO.read returns :error when error occurs", File, 
+  [read: fn(_file) -> ({:error, "1\n"}) end] do 
+    assert :error === GPIO.read("13") 
   end
 
 
