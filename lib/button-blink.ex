@@ -1,9 +1,9 @@
 defmodule ButtonBlink do
 
-  def main(_args) do 
+  def main(_args) do
     GPIO.write_mode("13")
     GPIO.read_mode("2")
-    iterator = Stream.repeatedly(fn() -> GPIO.read("2") end) 
+    iterator = Stream.repeatedly(fn() -> GPIO.read("2") end)
     Enum.each(iterator, fn(value) -> process(value) end)
   end
 
