@@ -1,2 +1,4 @@
-[ "meck": {:git, "git://github.com/eproxus/meck.git", "2447206f201bab1054c49cd32621eee23fa0ee3b", [{:tag, "0.7.2"}]},
-  "mock": {:git, "git://github.com/jjh42/mock.git", "e54a8f8ac3b69b5a610399f7fb5efe65446526eb", []} ]
+%{"bunt": {:hex, :bunt, "0.1.4"},
+  "credo": {:hex, :credo, "0.1.10"},
+  "meck": {:hex, :meck, "0.8.3"},
+  "mock": {:git, "https://github.com/jjh42/mock.git", "51595dbfc340058cdb385e38f199a7dc6d19d133", []}}
